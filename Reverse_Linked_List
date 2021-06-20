@@ -1,19 +1,22 @@
-
-class Solution{
-public:
-
-	vector<int> valueEqualToIndex(int arr[], int n) {
-	    // code here
-	    vector<int> v;
-	    int i;
-	    for(i=0;i<n;i++)
-	    {
-	        if(arr[i]==i+1)
-	        {
-	            v.push_back(i+1);
-	        }
-	    }
-	    return v;
-	}
+class Solution
+{
+    public:
+    //Function to reverse a linked list.
+    struct Node* reverseList(struct Node *head)
+    {
+        // code here
+        Node* cur=head;
+        Node* prev=NULL;
+        while(cur!=NULL){
+            Node* next=cur->next;
+            cur->next=prev;
+            prev=cur;
+            cur=next;
+            
+        }
+        // return head of reversed list
+        head=prev;
+        return head;
+    }
+    
 };
-
